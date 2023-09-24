@@ -22,6 +22,18 @@ module.exports = {
     'ecmaVersion': 'latest',
   },
   'rules': {
+    'max-len': [
+      'error',
+      {
+        'code': 90,
+        'tabWidth': 2,
+        'ignoreComments': true,
+        'ignoreUrls': true,
+        'ignoreStrings': true,
+        'ignoreTemplateLiterals': true,
+      },
+    ],
     'linebreak-style': 0,
+    'require-jsdoc': 0,
   },
 };

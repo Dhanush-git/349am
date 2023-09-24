@@ -40,8 +40,12 @@
     {{ content_for_header }}
 
     <!-- css -->
+    <link rel="stylesheet" href="{{ 'splide.min.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'base.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">
+
+    <!-- js -->
+    <script src="{{ 'splide.min.js' | asset_url }}"></script>
 
   </head>
   <body>
@@ -63,5 +67,6 @@
         product_recommendations_url: '{{ routes.product_recommendations_url }}'
       }
     </script>
+    <script src="{{ 'components.js' | asset_url }}"></script>
   </body>
 </html>

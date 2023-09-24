@@ -1,0 +1,31 @@
+<div id="section-template" class="color-{{ section.settings.color_scheme.id }} {% if section.settings.page_width %}page-width p-0{% endif %}">
+    <div class="page-width">
+        <h2 class="{{ settings.heading_size }}">Heading</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda maiores harum temporibus nihil quas eius quidem blanditiis voluptas eligendi dolor perspiciatis saepe iusto facere architecto minus exercitationem ab, quis omnis!</p>    
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Section Template",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "page_width",
+      "label": "Page Width",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme_1",
+      "label": "Color Scheme"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Section Template"
+    }
+  ]
+}
+{% endschema %}

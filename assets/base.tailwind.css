@@ -21,6 +21,10 @@
     details summary::-webkit-details-marker {
         @apply hidden
     }
+
+    img {
+        width: 100%;
+    }
 }
 
 @layer components {
@@ -48,4 +52,15 @@
 
 .shopify-section + .shopify-section {
     margin-top: var(--section-padding);
+}
+.splide__arrow {
+    background: white;
+}
+
+.splide__pagination__page, .splide__pagination__page.is-active {
+    background: black;
+}
+
+.splide__arrow:disabled {
+    opacity: 0;
 }

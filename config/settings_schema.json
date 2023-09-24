@@ -8,6 +8,39 @@
     "theme_support_url": "https://help.3amsessions.com"
   },
   {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "select",
+        "id": "heading_size",
+        "label": "Heading Size",
+        "options": [
+          {
+            "value": "h00",
+            "label": "Heading 00"
+          },
+          {
+            "value": "h0",
+            "label": "Heading 0"
+          },
+          {
+            "value": "h1",
+            "label": "Heading 1"
+          },
+          {
+            "value": "h2",
+            "label": "Heading 2"
+          },
+          {
+            "value": "h3",
+            "label": "Heading 3"
+          }
+        ],
+        "default": "h2"
+      }
+    ]
+  },
+  {
     "name": "Color",
     "settings": [
       {

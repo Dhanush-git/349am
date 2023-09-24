@@ -1,0 +1,131 @@
+<div id="image-gallery" class="color-{{ section.settings.color_scheme.id }} {% if section.settings.page_width %}page-width{% endif %}">
+  <div class="page-width {% unless section.settings.page_width %}p-0{% endunless %}">
+      <h2 class="{{ settings.heading_size }}">Heading</h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda maiores harum temporibus nihil quas eius quidem blanditiis voluptas eligendi dolor perspiciatis saepe iusto facere architecto minus exercitationem ab, quis omnis!</p>    
+  </div>
+  <div>
+    <splide-carousel
+      class="splide"
+      data-pagination-mobile="{{ section.settings.pagination_mobile }}"
+      data-pagination-desktop="{{ section.settings.pagination_desktop }}"
+      data-arrows-mobile="{{ section.settings.navigation_mobile }}"
+      data-arrows-desktop="{{ section.settings.navigation_desktop }}"
+      data-perpage-mobile="{{ section.settings.perpage_mobile }}"
+      data-perpage-desktop="{{ section.settings.perpage_desktop }}"
+    >
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for block in section.blocks %}
+            <li class="splide__slide aspect-square">
+              {{ block.settings.image | img_url: 'large' | img_tag  }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="splide__arrows">
+        <button class="splide__arrow splide__arrow--prev">
+          {% render 'icon', icon: 'arrow-right' %}
+        </button>
+        <button class="splide__arrow splide__arrow--next">
+          {% render 'icon', icon: 'arrow-right' %}
+        </button>
+      </div>
+    </splide-carousel>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image gallery",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "page_width",
+      "label": "Page Width",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Pagination"
+    },
+    {
+      "type": "checkbox",
+      "id": "pagination_desktop",
+      "label": "Desktop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "pagination_mobile",
+      "label": "Mobile",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Arrows"
+    },
+    {
+      "type": "checkbox",
+      "id": "navigation_desktop",
+      "label": "Desktop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "navigation_mobile",
+      "label": "Mobile",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Slides Settings"
+    },
+    {
+      "type": "header",
+      "content": "Slides Perpage"
+    },
+    {
+      "type": "number",
+      "id": "perpage_desktop",
+      "label": "Desktop",
+      "default": 3
+    },
+    {
+      "type": "number",
+      "id": "perpage_mobile",
+      "label": "Mobile",
+      "default": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "slide_peek",
+      "default": false,
+      "label": "Show partial next slide"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "default": "scheme_1",
+      "label": "Color Scheme"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image gallery"
+    }
+  ]
+}
+{% endschema %}
