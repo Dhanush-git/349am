@@ -1,6 +1,6 @@
 # 3:49am 👻
 
-3:49am is a tailwind based shopify theme build using my own starter theme [3am](https://github.com/Dhanush-git/3am-shopify).
+3:49am 👻 is a tailwind based shopify theme built using my own starter theme [3am](https://github.com/Dhanush-git/3am-shopify).
 
 ## Usage
 
