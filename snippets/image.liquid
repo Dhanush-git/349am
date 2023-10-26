@@ -5,6 +5,7 @@
     - image: {object} Img object (required)
     - lazyload: {boolean} Lazyload the image (optional)
     - alt: {string} Custom image ALT (optional)
+    - class: {class} Tailwind utility classes
 
   Usage:
     {% render 'image', image: product.featured_image %}
@@ -13,6 +14,7 @@
 {% liquid
   assign image_alt = alt | default: image.alt | escape
   assign preload = false
+  assign class = 'w-full h-full object-cover object-center ' | append: class
 
   if lazyload or lazyload == null
     assign lazyload = 'lazy'
@@ -25,13 +27,13 @@
 <picture>
   {% if image != blank %}
     {{ image
-      | image_url: width: 500
+      | image_url: width: 1500
       | image_tag: alt: image_alt,
-      class: 'w-full h-full object-cover object-center',
+      class: class,
       widths: '165, 360, 500, 720, 960, 1066, 1280, 1500, 1800',
       loading: lazyload, preload: preload
     }}
   {% else %}
-    {{ 'image' | placeholder_svg_tag: 'w-full h-full' }}
+  {{ 'detailed-apparel-1' | placeholder_svg_tag: class }}
   {% endif %}
 </picture>

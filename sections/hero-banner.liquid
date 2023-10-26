@@ -1,33 +1,5 @@
 <div id="hero-banner" class="color-{{ section.settings.color_scheme.id }} {% if section.settings.page_width %}page-width p-0{% endif %}">
-  <div>
-    <splide-carousel
-      class="splide"
-      data-pagination-mobile="{{ section.settings.pagination_mobile }}"
-      data-pagination-desktop="{{ section.settings.pagination_desktop }}"
-      data-arrows-mobile="{{ section.settings.navigation_mobile }}"
-      data-arrows-desktop="{{ section.settings.navigation_desktop }}"
-    >
-      <div class="splide__track">
-        <ul class="splide__list">
-          {% for block in section.blocks %}
-            <li class="splide__slide aspect-square sm:aspect-[3/2] md:aspect-[3/1] bg-slate-100 overflow-hidden">
-              {% if block.settings.image %}
-                <img src="{{ block.settings.image | image_url }}" class="object-cover">
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="splide__arrows">
-        <button class="splide__arrow splide__arrow--prev">
-          {% render 'icon', icon: 'arrow-right' %}
-        </button>
-        <button class="splide__arrow splide__arrow--next">
-          {% render 'icon', icon: 'arrow-right' %}
-        </button>
-      </div>
-    </splide-carousel>
-  </div>
+  {% render 'image', image: section.settings.image, class: "aspect-square md:aspect-[3/1]" %}
 </div>
 
 {% schema %}
@@ -41,55 +13,15 @@
       "default": false
     },
     {
-      "type": "header",
-      "content": "Pagination"
-    },
-    {
-      "type": "checkbox",
-      "id": "pagination_desktop",
-      "label": "Desktop",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "pagination_mobile",
-      "label": "Mobile",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "Arrows"
-    },
-    {
-      "type": "checkbox",
-      "id": "navigation_desktop",
-      "label": "Desktop",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "navigation_mobile",
-      "label": "Mobile",
-      "default": true
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
     },
     {
       "type": "color_scheme",
       "id": "color_scheme",
       "default": "scheme_1",
       "label": "Color Scheme"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "slide",
-      "name": "Image",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        }
-      ]
     }
   ],
   "presets": [

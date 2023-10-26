@@ -49,6 +49,9 @@
     }
 }
 
+.shopify-section {
+    @apply overflow-auto
+}
 
 .shopify-section + .shopify-section {
     margin-top: var(--section-padding);

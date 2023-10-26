@@ -54,12 +54,6 @@
             "default": "#FFFFFF"
           },
           {
-            "type": "color_background",
-            "id": "background_gradient",
-            "label": "Background gradient",
-            "info": "Background gradient replaces background where possible."
-          },
-          {
             "type": "color",
             "id": "text",
             "label": "Text",
@@ -99,8 +93,7 @@
         "role": {
           "text": "text",
           "background": {
-            "solid": "background",
-            "gradient": "background_gradient"
+            "solid": "background"
           },
           "links": "secondary_button_label",
           "icons": "text",
